@@ -4,90 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wheel Shop</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
 
-<!-- Navbar -->
+<nav>
+  <div class="nav-wrapper teal">
+    <a href="#" class="brand-logo">My App</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="sales-dropdown">Sales</a>
+        <ul id="sales-dropdown" class="dropdown-content">
+          <li><a th:href="@{/searchTires}">Sale Tires</a></li>
+          <li><a th:href="@{/searchWheels}">Sale Wheels</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="stock-dropdown">Stock</a>
+        <ul id="stock-dropdown" class="dropdown-content">
+          <li><a  th:href="@{/stocktirespage}">Stock Tires</a></li>
+          <li><a th:href="@{/wheelStockPage}">Stock Wheels</a></li>
+        </ul>
+      </li>
 
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="report-dropdown">Report</a>
+        <ul id="report-dropdown" class="dropdown-content">
+          <li><a th:href="@{/generatePdfReportForTiresSales}">Tires Report</a></li>
+          <li><a th:href="@{/generatePdfReportForWheelsSales}">Wheels Report</a></li>
+        </ul>
+      </li>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a href="#" class="navbar-brand">Wheel Shop</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a th:href="@{/home}" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" id="salesDropdown" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">Stock</a>
-          <ul class="dropdown-menu" aria-labelledby="salesDropdown">
-            <li><a class="dropdown-item" th:href="@{/wheelStockPage}">Stock Wheels</a></li>
-            <li><a class="dropdown-item"  th:href="@{/stocktirespage}">Stock Tires></a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a th:href="@{/report}" class="nav-link">Report</a>
-        </li>
-      </ul>
-    </div>
+      <li><a th:href="@{/home}">Home</a></li>
+    </ul>
   </div>
 </nav>
 
-
-
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="#" class="sidenav-close">Sales</a></li>
+  <li><a href="#" class="sidenav-close">Stock</a></li>
+  <li><a href="#" class="sidenav-close">Report</a></li>
+  <li><a href="#" class="sidenav-close">Home</a></li>
+</ul>
 
 
 <div class="container mt-5">
   <h2>Wheels Sale</h2>
-  <form th:action="@{/sellWheel}"  method="post">
+  <form th:action="@{/sellWheel}" method="post">
 
-    <!-- Hidden input for tireId -->
+    <!-- Hidden input for wheelId -->
     <input type="hidden" id="wheelId" name="wheelId" th:value="${wheel.id}" />
 
-    <div class="mb-3">
-      <label for="wheelSellingPrice" class="form-label">Wheel Selling Price</label>
-      <input type="number" id="wheelSellingPrice" name="wheelPrice" step="0.01" class="form-control" required>
+    <div class="input-field">
+      <input type="number" id="wheelSellingPrice" name="wheelPrice" step="0.01" class="validate" required>
+      <label for="wheelSellingPrice" class="active">Wheel Selling Price</label>
     </div>
 
-
-    <div class="mb-3">
-      <label for="wheelSize" class="form-label">Wheel Size</label>
-      <input type="number" id="wheelSize" name="wheelSize" th:field="*{wheel.wheelSize}" class="form-control" required>
+    <div class="input-field">
+      <input type="number" id="wheelSize" name="wheelSize" th:field="*{wheel.wheelSize}" class="validate" readonly>
+      <label for="wheelSize" class="active">Wheel Size</label>
     </div>
-    <div class="mb-3">
-      <label for="wheelBrand" class="form-label">Wheel Brand</label>
-      <input type="text" id="wheelBrand" name="wheelBrand" th:field="*{wheel.wheelBrand}" class="form-control" required>
+    <div class="input-field">
+      <input type="text" id="wheelBrand" name="wheelBrand" th:field="*{wheel.wheelBrand}" class="validate" readonly>
+      <label for="wheelBrand" class="active">Wheel Brand</label>
     </div>
-    <div class="mb-3">
-      <label for="dateCreated" class="form-label">Date Created</label>
-      <input type="date" id="dateCreated" name="dateCreated" th:value="*{wheel.dateCreated}" class="form-control" required>
+    <div class="input-field">
+      <input type="date" id="dateCreated" name="dateCreated" th:value="*{wheel.dateCreated}" class="validate" readonly>
+      <label for="dateCreated" class="active">Date Created</label>
     </div>
-    <div class="mb-3">
-      <label for="wheelPrice" class="form-label">Wheel Price(Stock)</label>
-      <input type="number" id="wheelPrice" name="wheelPrice" step="0.01" th:field="*{wheel.wheelPrice}" class="form-control" required>
+    <div class="input-field">
+      <input type="number" id="wheelPrice" name="wheelPrice" step="0.01" th:field="*{wheel.wheelPrice}" class="validate" readonly>
+      <label for="wheelPrice" class="active">Wheel Price (Stock)</label>
     </div>
-    <div class="mb-3">
-      <label for="wheelSerialNumber" class="form-label">Serial Number</label>
-      <input type="text" id="wheelSerialNumber" name="WheelSerialNumber" th:field="*{wheel.wheelSerialNumber}" class="form-control" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="stockOriginWheel" class="form-label">Stock Origin</label>
-      <input type="text" class="form-control" id="stockOriginWheel" name="stockOriginWheel" th:field="${wheel.stockOriginWheel}" required>
+    <div class="input-field">
+      <input type="text" id="wheelSerialNumber" name="WheelSerialNumber" th:field="*{wheel.wheelSerialNumber}" class="validate" readonly>
+      <label for="wheelSerialNumber" class="active">Serial Number</label>
     </div>
 
-    <button type="submit" class="btn btn-primary">Sell</button>
+    <div class="input-field">
+      <input type="text" id="stockOriginWheel" name="stockOriginWheel" th:field="${wheel.stockOriginWheel}" class="validate" readonly>
+      <label for="stockOriginWheel" class="active">Stock Origin</label>
+    </div>
+
+    <button type="submit" class="btn waves-effect waves-light">Sell</button>
   </form>
 </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  M.AutoInit(); // Initialize Materialize components
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownElems = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdownElems, { coverTrigger: false });
+
+            const sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+        });
+    </script>
 </body>
 </html>

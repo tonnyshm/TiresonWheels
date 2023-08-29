@@ -4,71 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Tire Shop</title>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a href="#" class="navbar-brand">Wheel Shop</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
-            </ul>
-        </div>
+
+<nav>
+    <div class="nav-wrapper teal">
+        <a href="#" class="brand-logo">My App</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="#" class="dropdown-trigger" data-target="sales-dropdown">Sales</a>
+                <ul id="sales-dropdown" class="dropdown-content">
+                    <li><a th:href="@{/searchTires}">Sale Tires</a></li>
+                    <li><a th:href="@{/searchWheels}">Sale Wheels</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dropdown-trigger" data-target="stock-dropdown">Stock</a>
+                <ul id="stock-dropdown" class="dropdown-content">
+                    <li><a  th:href="@{/stocktirespage}">Stock Tires</a></li>
+                    <li><a th:href="@{/wheelStockPage}">Stock Wheels</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="dropdown-trigger" data-target="report-dropdown">Report</a>
+                <ul id="report-dropdown" class="dropdown-content">
+                    <li><a th:href="@{/generatePdfReportForTiresSales}">Tires Report</a></li>
+                    <li><a th:href="@{/generatePdfReportForWheelsSales}">Wheels Report</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/home}">Home</a></li>
+        </ul>
     </div>
 </nav>
+
 
 <div class="container mt-5">
     <h2>Tire Stock Details</h2>
     <form th:action="@{/stocktires/save}" th:object="${StockTires}" method="post">
-        <div class="mb-3">
-            <label for="tireSize" class="form-label">Tire Size</label>
-            <input type="number" id="tireSize" name="tireSize" th:field="*{tireSize}" class="form-control" required>
+        <div class="input-field">
+            <input type="number" id="tireSize" name="tireSize" th:field="*{tireSize}" class="validate" required>
+            <label for="tireSize">Tire Size</label>
         </div>
-        <div class="mb-3">
-            <label for="tireBrand" class="form-label">Tire Brand</label>
-            <input type="text" id="tireBrand" name="tireBrand" th:field="*{tireBrand}" class="form-control" required>
+        <div class="input-field">
+            <input type="text" id="tireBrand" name="tireBrand" th:field="*{tireBrand}" class="validate" required>
+            <label for="tireBrand">Tire Brand</label>
         </div>
-        <div class="mb-3">
-            <label for="dateCreated" class="form-label">Date Created</label>
-            <input type="date" id="dateCreated" name="dateCreated" th:field="*{dateCreated}" class="form-control" required/>
+        <div class="input-field">
+            <input type="date" id="dateCreated" name="dateCreated" th:field="*{dateCreated}" class="validate" required>
+            <label for="dateCreated">Date Created</label>
         </div>
-        <div class="mb-3">
-            <label for="tirePrice" class="form-label">Tire Price</label>
-            <input type="number" id="tirePrice" name="tirePrice" step="0.01" th:field="*{tirePrice}" class="form-control" required>
+        <div class="input-field">
+            <input type="number" id="tirePrice" name="tirePrice" step="0.01" th:field="*{tirePrice}" class="validate" required>
+            <label for="tirePrice">Tire Price</label>
         </div>
-        <div class="mb-3">
-            <label for="serialNumberTire" class="form-label">Serial Number</label>
-            <input type="text" id="serialNumberTire" name="serialNumberTire" th:field="*{serialNumberTire}" class="form-control" required>
+        <div class="input-field">
+            <input type="text" id="serialNumberTire" name="serialNumberTire" th:field="*{serialNumberTire}" class="validate" required>
+            <label for="serialNumberTire">Serial Number</label>
         </div>
-        <div class="mb-3">
-            <label for="stockOriginTire" class="form-label">Stock Origin</label>
-            <select id="stockOriginTire" name="stockOriginTire" th:field="*{stockOriginTire}" class="form-control" required>
+        <div class="input-field">
+            <select id="stockOriginTire" name="stockOriginTire" th:field="*{stockOriginTire}" class="validate" required>
+                <option value="" disabled selected>Select Stock Origin</option>
                 <option th:each="stockOrigin : ${T(com.TiresWheels.TiresOnWheels.model.StockOrigin).values()}"
                         th:value="${stockOrigin}" th:text="${stockOrigin}"></option>
             </select>
+            <label>Stock Origin</label>
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn waves-effect waves-light">Save</button>
     </form>
 </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  M.AutoInit(); // Initialize Materialize components
+</script>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownElems = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdownElems, { coverTrigger: false });
+
+            const sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+        });
+    </script>
 </body>
 </html>

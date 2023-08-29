@@ -3,15 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <title>Tire Shop - Sell Tire</title>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <!-- ... (Your navbar content here) ... -->
+<nav>
+  <div class="nav-wrapper teal">
+    <a href="#" class="brand-logo">My App</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="sales-dropdown">Sales</a>
+        <ul id="sales-dropdown" class="dropdown-content">
+          <li><a th:href="@{/searchTires}">Sale Tires</a></li>
+          <li><a th:href="@{/searchWheels}">Sale Wheels</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="stock-dropdown">Stock</a>
+        <ul id="stock-dropdown" class="dropdown-content">
+          <li><a  th:href="@{/stocktirespage}">Stock Tires</a></li>
+          <li><a th:href="@{/wheelStockPage}">Stock Wheels</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="report-dropdown">Report</a>
+        <ul id="report-dropdown" class="dropdown-content">
+          <li><a th:href="@{/generatePdfReportForTiresSales}">Tires Report</a></li>
+          <li><a th:href="@{/generatePdfReportForWheelsSales}">Wheels Report</a></li>
+        </ul>
+      </li>
+
+      <li><a th:href="@{/home}">Home</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container mt-4">
@@ -21,42 +50,53 @@
     <!-- Hidden input for tireId -->
     <input type="hidden" id="tireId" name="tireId" th:value="${tire.id}" />
 
-      <div class="mb-3">
-          <label for="tirePrice" class="form-label">Selling Price</label>
-          <input type="number" class="form-control" id="tireSellingPrice" name="tirePrice" step="0.01"  required>
-      </div>
-
-    <div class="mb-3">
-      <label for="tireSize" class="form-label">Tire Size</label>
-      <input type="number" class="form-control" id="tireSize" name="tireSize" th:field="${tire.tireSize}" required>
-    </div>
-    <div class="mb-3">
-      <label for="tireBrand" class="form-label">Tire Brand</label>
-      <input type="text" class="form-control" id="tireBrand" name="tireBrand" th:field="${tire.tireBrand}" required>
-    </div>
-    <div class="mb-3">
-      <label for="dateCreated" class="form-label">Date Created</label>
-      <input type="date" class="form-control" id="dateCreated" name="dateCreated" th:value="${tire.dateCreated}" required/>
-    </div>
-    <div class="mb-3">
-      <label for="tirePrice" class="form-label">Tire Price(Stock)</label>
-      <input type="number" class="form-control" id="tirePrice" name="tirePrice" step="0.01" th:field="${tire.tirePrice}" required>
+    <div class="input-field">
+      <input type="number" id="tireSellingPrice" name="tirePrice" step="0.01" class="validate" required>
+      <label for="tireSellingPrice" class="active">Selling Price</label>
     </div>
 
+    <div class="input-field">
+      <input type="number" id="tireSize" name="tireSize" th:field="${tire.tireSize}" class="validate" readonly>
+      <label for="tireSize" class="active">Tire Size</label>
+    </div>
+    <div class="input-field">
+      <input type="text" id="tireBrand" name="tireBrand" th:field="${tire.tireBrand}" class="validate" readonly>
+      <label for="tireBrand" class="active">Tire Brand</label>
+    </div>
+    <div class="input-field">
+      <input type="date" id="dateCreated" name="dateCreated" th:value="${tire.dateCreated}" class="validate" readonly>
+      <label for="dateCreated" class="active">Date Created</label>
+    </div>
+    <div class="input-field">
+      <input type="number" id="tirePrice" name="tirePrice" step="0.01" th:field="${tire.tirePrice}" class="validate" readonly>
+      <label for="tirePrice" class="active">Tire Price (Stock)</label>
+    </div>
 
-    <div class="mb-3">
-      <label for="serialNumberTire" class="form-label">Serial Number</label>
-      <input type="text" class="form-control" id="serialNumberTire" name="serialNumberTire" th:field="${tire.serialNumberTire}" required>
+    <div class="input-field">
+      <input type="text" id="serialNumberTire" name="serialNumberTire" th:field="${tire.serialNumberTire}" class="validate" readonly>
+      <label for="serialNumberTire" class="active">Serial Number</label>
     </div>
-    <div class="mb-3">
-      <label for="stockOriginTire" class="form-label">Stock Origin</label>
-      <input type="text" class="form-control" id="stockOriginTire" name="stockOriginTire" th:field="${tire.stockOriginTire}" required>
+    <div class="input-field">
+      <input type="text" id="stockOriginTire" name="stockOriginTire" th:field="${tire.stockOriginTire}" class="validate" readonly>
+      <label for="stockOriginTire" class="active">Stock Origin</label>
     </div>
-    <button type="submit" class="btn btn-success">Sell</button>
+    <button type="submit" class="btn waves-effect waves-light">Sell</button>
   </form>
 </div>
 
-<!-- Bootstrap JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  M.AutoInit(); // Initialize Materialize components
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownElems = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdownElems, { coverTrigger: false });
+
+            const sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+        });
+    </script>
 </body>
 </html>
