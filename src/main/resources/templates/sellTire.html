@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <title>Tire Shop - Sell Tire</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- ... (Your navbar content here) ... -->
+</nav>
+
+<div class="container mt-4">
+  <h2>Sell Tire</h2>
+  <form th:action="@{/sellTire}" method="post">
+
+    <!-- Hidden input for tireId -->
+    <input type="hidden" id="tireId" name="tireId" th:value="${tire.id}" />
+
+      <div class="mb-3">
+          <label for="tirePrice" class="form-label">Selling Price</label>
+          <input type="number" class="form-control" id="tireSellingPrice" name="tirePrice" step="0.01"  required>
+      </div>
+
+    <div class="mb-3">
+      <label for="tireSize" class="form-label">Tire Size</label>
+      <input type="number" class="form-control" id="tireSize" name="tireSize" th:field="${tire.tireSize}" required>
+    </div>
+    <div class="mb-3">
+      <label for="tireBrand" class="form-label">Tire Brand</label>
+      <input type="text" class="form-control" id="tireBrand" name="tireBrand" th:field="${tire.tireBrand}" required>
+    </div>
+    <div class="mb-3">
+      <label for="dateCreated" class="form-label">Date Created</label>
+      <input type="date" class="form-control" id="dateCreated" name="dateCreated" th:value="${tire.dateCreated}" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tirePrice" class="form-label">Tire Price(Stock)</label>
+      <input type="number" class="form-control" id="tirePrice" name="tirePrice" step="0.01" th:field="${tire.tirePrice}" required>
+    </div>
+
+
+    <div class="mb-3">
+      <label for="serialNumberTire" class="form-label">Serial Number</label>
+      <input type="text" class="form-control" id="serialNumberTire" name="serialNumberTire" th:field="${tire.serialNumberTire}" required>
+    </div>
+    <div class="mb-3">
+      <label for="stockOriginTire" class="form-label">Stock Origin</label>
+      <input type="text" class="form-control" id="stockOriginTire" name="stockOriginTire" th:field="${tire.stockOriginTire}" required>
+    </div>
+    <button type="submit" class="btn btn-success">Sell</button>
+  </form>
+</div>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

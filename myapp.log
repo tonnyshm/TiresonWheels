@@ -1,0 +1,141 @@
+2023-08-29T00:01:01.858+02:00  WARN 1182 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m4s732ms).
+2023-08-29T00:28:56.982+02:00  WARN 1182 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m55s57ms).
+2023-08-29T00:33:38.927+02:00  INFO 1182 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T00:33:38.933+02:00  INFO 1182 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-29T00:33:38.941+02:00  INFO 1182 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-29T14:46:13.487+02:00  INFO 10913 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Starting TiresOnWheelsApplication using Java 19.0.1 with PID 10913 (/Users/kst/Desktop/TiresOnWheels/target/classes started by kst in /Users/kst/Desktop/TiresOnWheels)
+2023-08-29T14:46:13.490+02:00  INFO 10913 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-29T14:46:13.555+02:00  INFO 10913 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-29T14:46:13.556+02:00  INFO 10913 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-29T14:46:14.206+02:00  INFO 10913 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-29T14:46:14.265+02:00  INFO 10913 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 4 JPA repository interfaces.
+2023-08-29T14:46:15.053+02:00  INFO 10913 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-29T14:46:15.066+02:00  INFO 10913 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-29T14:46:15.067+02:00  INFO 10913 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-08-29T14:46:15.165+02:00  INFO 10913 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-29T14:46:15.166+02:00  INFO 10913 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1610 ms
+2023-08-29T14:46:15.353+02:00  INFO 10913 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-29T14:46:15.415+02:00  INFO 10913 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-08-29T14:46:15.417+02:00  INFO 10913 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-29T14:46:15.553+02:00  INFO 10913 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:46:15.676+02:00  INFO 10913 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-29T14:46:15.692+02:00  INFO 10913 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-29T14:46:16.110+02:00  INFO 10913 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4968f6cd
+2023-08-29T14:46:16.111+02:00  INFO 10913 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-29T14:46:16.176+02:00  INFO 10913 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.31
+2023-08-29T14:46:16.354+02:00  INFO 10913 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:46:16.858+02:00  INFO 10913 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-29T14:46:16.977+02:00  INFO 10913 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:46:17.159+02:00  INFO 10913 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-29T14:46:17.578+02:00  WARN 10913 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-29T14:46:17.869+02:00  INFO 10913 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-29T14:46:17.891+02:00  INFO 10913 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-29T14:46:17.901+02:00  INFO 10913 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Started TiresOnWheelsApplication in 5.353 seconds (process running for 6.396)
+2023-08-29T14:46:22.267+02:00  INFO 10913 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-29T14:46:22.267+02:00  INFO 10913 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-29T14:46:22.270+02:00  INFO 10913 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-08-29T14:47:07.732+02:00  INFO 10913 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:47:07.740+02:00  INFO 10913 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-29T14:47:07.759+02:00  INFO 10913 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-29T14:49:03.029+02:00  INFO 11527 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Starting TiresOnWheelsApplication using Java 19.0.1 with PID 11527 (/Users/kst/Desktop/TiresOnWheels/target/classes started by kst in /Users/kst/Desktop/TiresOnWheels)
+2023-08-29T14:49:03.032+02:00  INFO 11527 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-29T14:49:03.107+02:00  INFO 11527 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-29T14:49:03.107+02:00  INFO 11527 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-29T14:49:03.770+02:00  INFO 11527 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-29T14:49:03.815+02:00  INFO 11527 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 4 JPA repository interfaces.
+2023-08-29T14:49:04.422+02:00  INFO 11527 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-29T14:49:04.432+02:00  INFO 11527 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-29T14:49:04.432+02:00  INFO 11527 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-08-29T14:49:04.476+02:00  INFO 11527 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-29T14:49:04.477+02:00  INFO 11527 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1368 ms
+2023-08-29T14:49:04.591+02:00  INFO 11527 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-29T14:49:04.627+02:00  INFO 11527 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-08-29T14:49:04.629+02:00  INFO 11527 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-29T14:49:04.714+02:00  INFO 11527 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:49:04.797+02:00  INFO 11527 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-29T14:49:04.808+02:00  INFO 11527 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-29T14:49:05.103+02:00  INFO 11527 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4968f6cd
+2023-08-29T14:49:05.104+02:00  INFO 11527 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-29T14:49:05.156+02:00  INFO 11527 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.31
+2023-08-29T14:49:05.295+02:00  INFO 11527 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:49:05.827+02:00  INFO 11527 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-29T14:49:05.953+02:00  INFO 11527 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:49:06.208+02:00  INFO 11527 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-29T14:49:06.715+02:00  WARN 11527 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-29T14:49:06.958+02:00  INFO 11527 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-29T14:49:06.978+02:00  INFO 11527 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-29T14:49:06.987+02:00  INFO 11527 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Started TiresOnWheelsApplication in 4.595 seconds (process running for 5.428)
+2023-08-29T14:49:11.106+02:00  INFO 11527 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-29T14:49:11.106+02:00  INFO 11527 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-29T14:49:11.109+02:00  INFO 11527 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-08-29T14:49:32.689+02:00  INFO 11527 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:49:32.694+02:00  INFO 11527 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-29T14:49:32.701+02:00  INFO 11527 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-29T14:49:37.024+02:00  INFO 11556 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Starting TiresOnWheelsApplication using Java 19.0.1 with PID 11556 (/Users/kst/Desktop/TiresOnWheels/target/classes started by kst in /Users/kst/Desktop/TiresOnWheels)
+2023-08-29T14:49:37.028+02:00  INFO 11556 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-29T14:49:37.095+02:00  INFO 11556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-29T14:49:37.095+02:00  INFO 11556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-29T14:49:37.607+02:00  INFO 11556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-29T14:49:37.653+02:00  INFO 11556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 4 JPA repository interfaces.
+2023-08-29T14:49:38.158+02:00  INFO 11556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-29T14:49:38.166+02:00  INFO 11556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-29T14:49:38.166+02:00  INFO 11556 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-08-29T14:49:38.210+02:00  INFO 11556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-29T14:49:38.210+02:00  INFO 11556 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1114 ms
+2023-08-29T14:49:38.313+02:00  INFO 11556 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-29T14:49:38.344+02:00  INFO 11556 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-08-29T14:49:38.346+02:00  INFO 11556 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-29T14:49:38.429+02:00  INFO 11556 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:49:38.516+02:00  INFO 11556 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-29T14:49:38.528+02:00  INFO 11556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-29T14:49:38.772+02:00  INFO 11556 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4968f6cd
+2023-08-29T14:49:38.774+02:00  INFO 11556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-29T14:49:38.823+02:00  INFO 11556 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.31
+2023-08-29T14:49:38.974+02:00  INFO 11556 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:49:39.471+02:00  INFO 11556 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-29T14:49:39.564+02:00  INFO 11556 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:49:39.752+02:00  INFO 11556 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-29T14:49:40.140+02:00  WARN 11556 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-29T14:49:40.375+02:00  INFO 11556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-29T14:49:40.396+02:00  INFO 11556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-29T14:49:40.405+02:00  INFO 11556 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Started TiresOnWheelsApplication in 3.861 seconds (process running for 4.458)
+2023-08-29T14:49:43.696+02:00  INFO 11556 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-29T14:49:43.697+02:00  INFO 11556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-29T14:49:43.698+02:00  INFO 11556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-29T14:54:27.071+02:00  INFO 11556 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:54:27.113+02:00  INFO 11556 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-29T14:54:27.176+02:00  INFO 11556 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-29T14:54:30.002+02:00  INFO 12152 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Starting TiresOnWheelsApplication using Java 19.0.1 with PID 12152 (/Users/kst/Desktop/TiresOnWheels/target/classes started by kst in /Users/kst/Desktop/TiresOnWheels)
+2023-08-29T14:54:30.004+02:00  INFO 12152 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-29T14:54:30.065+02:00  INFO 12152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-29T14:54:30.066+02:00  INFO 12152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-29T14:54:30.605+02:00  INFO 12152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-29T14:54:30.665+02:00  INFO 12152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
+2023-08-29T14:54:31.232+02:00  INFO 12152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-29T14:54:31.253+02:00  INFO 12152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-29T14:54:31.254+02:00  INFO 12152 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-08-29T14:54:31.315+02:00  INFO 12152 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-29T14:54:31.316+02:00  INFO 12152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1250 ms
+2023-08-29T14:54:31.454+02:00  INFO 12152 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-29T14:54:31.503+02:00  INFO 12152 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-08-29T14:54:31.509+02:00  INFO 12152 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-29T14:54:31.620+02:00  INFO 12152 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:54:31.717+02:00  INFO 12152 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-29T14:54:31.731+02:00  INFO 12152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-29T14:54:32.069+02:00  INFO 12152 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4968f6cd
+2023-08-29T14:54:32.071+02:00  INFO 12152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-29T14:54:32.135+02:00  INFO 12152 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.31
+2023-08-29T14:54:32.292+02:00  INFO 12152 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T14:54:32.864+02:00  INFO 12152 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-29T14:54:33.017+02:00  INFO 12152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:54:33.420+02:00  INFO 12152 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-29T14:54:34.124+02:00  WARN 12152 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-29T14:54:34.488+02:00  INFO 12152 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-29T14:54:34.519+02:00  INFO 12152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-29T14:54:34.530+02:00  INFO 12152 --- [restartedMain] c.T.T.TiresOnWheelsApplication           : Started TiresOnWheelsApplication in 5.183 seconds (process running for 5.793)
+2023-08-29T14:54:38.928+02:00  INFO 12152 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-29T14:54:38.928+02:00  INFO 12152 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-29T14:54:38.933+02:00  INFO 12152 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-08-29T14:56:08.978+02:00  INFO 12152 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T14:56:08.986+02:00  INFO 12152 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-29T14:56:08.996+02:00  INFO 12152 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

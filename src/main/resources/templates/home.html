@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--  <style>-->
+<!--        /* Center the image */-->
+<!--        .center-image {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--            height: 70vh; /* Adjust the height as needed */-->
+<!--        }-->
+<!--    </style>-->
+
+
+  <style>
+    body {
+  background-image: url("/HeroArticleWhatIsWheelOffsetDesktop_2048.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+   </style>
+
+
+</head>
+<body>
+<nav>
+  <div class="nav-wrapper teal">
+    <a href="#" class="brand-logo">My App</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="sales-dropdown">Sales</a>
+        <ul id="sales-dropdown" class="dropdown-content">
+          <li><a th:href="@{/searchTires}">Sale Tires</a></li>
+          <li><a th:href="@{/searchWheels}">Sale Wheels</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="stock-dropdown">Stock</a>
+        <ul id="stock-dropdown" class="dropdown-content">
+          <li><a  th:href="@{/stocktirespage}">Stock Tires</a></li>
+          <li><a th:href="@{/wheelStockPage}">Stock Wheels</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="report-dropdown">Report</a>
+        <ul id="report-dropdown" class="dropdown-content">
+          <li><a th:href="@{/generatePdfReportForTiresSales}">Tires Report</a></li>
+          <li><a th:href="@{/generatePdfReportForWheelsSales}">Wheels Report</a></li>
+        </ul>
+      </li>
+
+      <li><a th:href="@{/home}">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="#" class="sidenav-close">Sales</a></li>
+  <li><a href="#" class="sidenav-close">Stock</a></li>
+  <li><a href="#" class="sidenav-close">Report</a></li>
+  <li><a href="#" class="sidenav-close">Home</a></li>
+</ul>
+
+
+<!--&lt;!&ndash; Centered image &ndash;&gt;-->
+<!--<div class="center-image">-->
+<!--  <img src="home.jpg" alt="Centered Image">-->
+<!--</div>-->
+
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownElems = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdownElems, { coverTrigger: false });
+
+            const sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+        });
+    </script>
+</body>
+</html>

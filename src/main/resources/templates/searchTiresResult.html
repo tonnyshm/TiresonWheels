@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <title>Tire Shop</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Wheel Shop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Stock</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Sales
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/stocktirespage">Tires Stock</a></li>
+                        <li><a class="dropdown-item" href="/wheelstockpage">Wheels Stock</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div class="container mt-4">
+    <h2>Search Tires</h2>
+    <form th:action="@{/searchTires}" method="post">
+        <label for="searchTireSize">Enter Tire Size:</label>
+        <input type="number" id="searchTireSize" name="tireSize" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display search results here -->
+    <div class="row" th:if="${tires != null}">
+        <div class="col">
+            <ul>
+                <li th:each="tire : ${tires}">
+                    <a th:href="@{'#'}" th:data-tire-size="${tire.tireSize}" th:data-tire-brand="${tire.tireBrand}"
+                       th:data-date-created="${tire.dateCreated}" th:data-tire-price="${tire.tirePrice}"
+                       th:data-serial-number="${tire.serialNumberTire}" th:data-stock-origin="${tire.stockOriginTire}"
+                       onclick="fillForm(this)">
+                        Tire Size: <span th:text="${tire.tireSize}"></span>, Brand: <span th:text="${tire.tireBrand}"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Display tire details form here -->
+    <div class="row" th:if="${selectedTire != null}">
+        <div class="col">
+            <h3>Tire Details</h3>
+            <form th:action="@{/sellTire}" method="post">
+                <div class="mb-3">
+                    <label for="tireSize" class="form-label">Tire Size</label>
+                    <input type="number" class="form-control" id="tireSize" name="tireSize" th:value="${selectedTire.tireSize}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tireBrand" class="form-label">Tire Brand</label>
+                    <input type="text" class="form-control" id="tireBrand" name="tireBrand" th:value="${selectedTire.tireBrand}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="dateCreated" class="form-label">Date Created</label>
+                    <input type="date" class="form-control" id="dateCreated" name="dateCreated" th:value="${selectedTire.dateCreated}" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="tirePrice" class="form-label">Tire Price</label>
+                    <input type="number" class="form-control" id="tirePrice" name="tirePrice" step="0.01" th:value="${selectedTire.tirePrice}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="serialNumberTire" class="form-label">Serial Number</label>
+                    <input type="text" class="form-control" id="serialNumberTire" name="serialNumberTire" th:value="${selectedTire.serialNumberTire}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="stockOriginTire" class="form-label">Stock Origin</label>
+                    <input type="text" class="form-control" id="stockOriginTire" name="stockOriginTire" th:value="${selectedTire.stockOriginTire}" required>
+                </div>
+                <button type="submit" class="btn btn-success">Sell</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JavaScript -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>-->
+
+<!-- Your JavaScript includes and other content here -->
+<script>
+    function fillForm(link) {
+        document.getElementById("tireSize").value = link.getAttribute("data-tire-size");
+        document.getElementById("tireBrand").value = link.getAttribute("data-tire-brand");
+        document.getElementById("dateCreated").value = link.getAttribute("data-date-created");
+        document.getElementById("tirePrice").value = link.getAttribute("data-tire-price");
+        document.getElementById("serialNumberTire").value = link.getAttribute("data-serial-number");
+        document.getElementById("stockOriginTire").value = link.getAttribute("data-stock-origin");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+        // Attach click event listeners to the links
+        const tireLinks = document.querySelectorAll("a[data-tire-size]");
+        tireLinks.forEach(link => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                fillForm(link);
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>

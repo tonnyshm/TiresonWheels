@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Generate Report For Wheels Sales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-wrapper teal">
+        <a href="#" class="brand-logo">My App</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="#" class="dropdown-trigger" data-target="sales-dropdown">Sales</a>
+                <ul id="sales-dropdown" class="dropdown-content">
+                    <li><a th:href="@{/searchTires}">Sale Tires</a></li>
+                    <li><a th:href="@{/searchWheels}">Sale Wheels</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dropdown-trigger" data-target="stock-dropdown">Stock</a>
+                <ul id="stock-dropdown" class="dropdown-content">
+                    <li><a  th:href="@{/stocktirespage}">Stock Tires</a></li>
+                    <li><a th:href="@{/wheelStockPage}">Stock Wheels</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="dropdown-trigger" data-target="report-dropdown">Report</a>
+                <ul id="report-dropdown" class="dropdown-content">
+                    <li><a th:href="@{/generatePdfReportForTiresSales}">Tires Report</a></li>
+                    <li><a th:href="@{/generatePdfReportForWheelsSales}">Wheels Report</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/home}">Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="#" class="sidenav-close">Sales</a></li>
+    <li><a href="#" class="sidenav-close">Stock</a></li>
+    <li><a href="#" class="sidenav-close">Report</a></li>
+    <li><a href="#" class="sidenav-close">Home</a></li>
+</ul>
+
+<div class="container">
+    <h3 class="center-align">PDF Generate Report For Wheels Sales</h3>
+    <form th:action="@{/generateReportForWheels}" method="get">
+        <div class="row">
+            <div class="input-field col s12 m4">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" class="validate" required>
+            </div>
+            <div class="input-field col s12 m4">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" class="validate" required>
+            </div>
+            <div class="input-field col s12 m4">
+                <select id="reportType" name="reportType" required>
+                    <option value="" disabled selected>Select a Report Type</option>
+                    <option value="Daily">Daily</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                </select>
+                <label for="reportType">Report Type:</label>
+            </div>
+
+        </div>
+        <div class="row center-align">
+            <button type="submit" class="btn waves-effect waves-light">Generate Report</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const dropdownElems = document.querySelectorAll('.dropdown-trigger');
+M.Dropdown.init(dropdownElems, { coverTrigger: false });
+
+const sidenavElems = document.querySelectorAll('.sidenav');
+M.Sidenav.init(sidenavElems);
+});
+</script>
+</body>
+</html>
