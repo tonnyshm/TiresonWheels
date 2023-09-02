@@ -20,7 +20,7 @@ public class StockTires {
 
     private int tireSize;
     private String tireBrand;
-    private String tireDimensions; //diameter, width, sidewall, circumference of a tire
+    private String tireDimensions; //diameter, width, sidewall, circumference of a tire,
     private LocalDate dateCreated;
 
     private BigDecimal tirePrice;
