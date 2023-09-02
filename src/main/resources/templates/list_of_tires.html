@@ -52,7 +52,7 @@
     <li th:each="tire : ${tires}">
       <a th:href="@{/sellTire(tireId=${tire.id})}">
         <!-- Display whatever tire details you want here -->
-        <span th:text="${tire.tireBrand + ' ' + tire.tireSize}"></span>
+        <span th:text="${tire.tireBrand + ' ' + ' || ' + tire.tireDimensions}"></span>
       </a>
     </li>
   </ul>

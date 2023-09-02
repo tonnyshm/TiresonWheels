@@ -51,8 +51,15 @@
     <form th:action="@{/stocktires/save}" th:object="${StockTires}" method="post">
         <div class="input-field">
             <input type="number" id="tireSize" name="tireSize" th:field="*{tireSize}" class="validate" required>
-            <label for="tireSize">Tire Size</label>
+            <label for="tireSize">Rim Size</label>
         </div>
+
+        <div class="input-field">
+            <input type="text" id="tireDimensions" name="tireDimensions" th:field="*{tireDimensions}" class="validate" required oninput="this.value = this.value.toUpperCase()">
+            <label for="tireDimensions">Tire Dimensions (Capital Letters Only)</label>
+        </div>
+
+
         <div class="input-field">
             <input type="text" id="tireBrand" name="tireBrand" th:field="*{tireBrand}" class="validate" required>
             <label for="tireBrand">Tire Brand</label>
